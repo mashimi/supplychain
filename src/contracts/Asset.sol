@@ -8,26 +8,36 @@ contract Asset {
   enum States {
     Created,
     Sent,
-    Received,
+    Received
   }
 
   event Action(
     string name,
-    string account,
-    string custodian,
+    address account,
+    address custodian,
     uint timestamp
   );
 
   constructor(string memory _name) public {
+    // Set name
     name = _name;
+
+    // Make deployer custodian
     custodian = msg.sender;
+
+    // Update state to "Created"
     state = States.Created;
-    emit Action("CREATE", msg.sender, msg.sender, now)
+
+    // Log history
+    emit Action("CREATE", msg.sender, msg.sender, now);
   }
 
   function send(address _to) public {
     // Must be custodian to send
     require(msg.sender == custodian);
+
+    // Cannot send to self
+    require(_to != custodian);
 
     // Can't be in "Sent" state
     // Must be "Created" or "Received"
