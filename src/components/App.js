@@ -9,8 +9,15 @@ import Table from './Table'
 class App extends Component {
 
   async componentWillMount() {
+    await this.detectAsset()
     await this.loadWeb3()
     await this.loadBlockchainData()
+  }
+
+  async detectAsset() {
+    const urlParams = new URLSearchParams(window.location.search)
+    const address = urlParams.get('address')
+    this.setState({ contractAddress: address })
   }
 
   async loadWeb3() {
@@ -27,10 +34,6 @@ class App extends Component {
   }
 
   async loadBlockchainData() {
-    window.web3.eth.transactionConfirmationBlocks = 0
-    // If state has address, then load page
-    // Else, load new contract form
-    // Load account
     const accounts = await window.web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     if(this.state.contractAddress) {
@@ -52,26 +55,26 @@ class App extends Component {
     }
   }
 
+  // http://localhost:3000/?address=0x33E3E71eEF5EF08fdd9C17fc9A246F437AB84A18
   loadAsset = async () => {
+    console.log("loading asset", Asset.abi, this.state.contractAddress)
     const contract = new window.web3.eth.Contract(Asset.abi, this.state.contractAddress)
     const name = await contract.methods.name().call()
     const custodian = await contract.methods.custodian().call()
     const actions = await contract.getPastEvents('Action', { fromBlock: 0, toBlock: 'latest' } )
+    console.log("finished loading asset")
 
     this.setState({
       contract: contract,
       name: name,
       custodian: custodian,
-      actions: actions,
-      loading: false
+      actions: actions
     })
   }
 
   createAsset = async (name) => {
     this.setState({ loading: true })
-
     const contract = new window.web3.eth.Contract(Asset.abi)
-
     contract.deploy({
       data: Asset.bytecode,
       arguments: [name]
@@ -82,31 +85,19 @@ class App extends Component {
       console.log(receipt.contractAddress)
       this.setState({ contractAddress: receipt.contractAddress })
       await this.loadAsset()
+      this.setState({ loading: false })
     })
   }
 
-  sendAsset = () => {
+  sendAsset = async () => {
 
   }
 
-  receiveAsset = () => {
+  receiveAsset = async () => {
 
   }
 
-  renderContent = () => {
-//     let loading = true
-// 
-// 
-//     if(this.state.contractAddress) {
-//       console.log("this.state.contractAddress", this.state.contractAddress)
-//       loading = this.state.name.length < 0 ||
-//                 this.state.custodian.length < 0
-//     } else {
-//       loading = this.state.account.length < 0
-//     }
-// 
-//     console.log("this.state.name", this.state.name, "this.state.custodian", this.state.custodian)
-
+  renderContent() {
     if(this.state.loading) {
       return(
         <div id="loader" className="text-center">
@@ -114,8 +105,6 @@ class App extends Component {
         </div>
       )
     }
-
-    console.log("name", this.state.name)
 
     if(this.state.contractAddress) {
       return(
