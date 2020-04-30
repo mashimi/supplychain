@@ -4,7 +4,7 @@ import './App.css';
 import Asset from '../artifacts/Asset.json'
 import Navbar from './Navbar'
 import Form from './Form'
-import Table from './Table'
+import Main from './Main'
 
 class App extends Component {
 
@@ -55,7 +55,6 @@ class App extends Component {
     }
   }
 
-  // http://localhost:3000/?address=0x33E3E71eEF5EF08fdd9C17fc9A246F437AB84A18
   loadAsset = async () => {
     const contract = new window.web3.eth.Contract(Asset.abi, this.state.contractAddress)
     const name = await contract.methods.name().call()
@@ -119,7 +118,7 @@ class App extends Component {
 
     if(this.state.contractAddress) {
       return(
-        <Table
+        <Main
           name={this.state.name}
           custodian={this.state.custodian}
           status={this.state.status}

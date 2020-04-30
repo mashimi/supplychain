@@ -3,7 +3,7 @@ import moment from 'moment'
 
 const STATUSES = ['CREATED', 'SENT', 'RECEIVED']
 
-class Table extends Component {
+class Main extends Component {
 
   render() {
     return (
@@ -14,7 +14,7 @@ class Table extends Component {
             <tr>
               <th scope="col">Status</th>
               <th scope="col">Custodian</th>
-              <th scope="col">Links</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -22,8 +22,16 @@ class Table extends Component {
               <td>{STATUSES[this.props.status]}</td>
               <td><small>{this.props.custodian}</small></td>
               <td>
-                <a href={`http://localhost:3000?address=${this.props.contractAddress}`} target="_blank">Share</a> |
+                <a
+                  href={`http://localhost:3000?address=${this.props.contractAddress}`}
+                  target="_blank"
+                  className="btn btn-primary"
+                >
+                  Share
+                </a>
+                &nbsp;
                 <button
+                  className="btn btn-primary"
                   onClick={() => {
                     let recipient = window.prompt("Who would you like to send the asset to?")
                     this.props.sendAsset(recipient)
@@ -31,7 +39,10 @@ class Table extends Component {
                 >
                   Send
                 </button>
-                <button onClick={() => this.props.receiveAsset() } > 
+                &nbsp;
+                <button
+                  className="btn btn-primary"
+                  onClick={() => this.props.receiveAsset() } > 
                   Receive
                 </button>
               </td>
@@ -42,8 +53,8 @@ class Table extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">Action</th>
-              <th scope="col">Timestamp</th>
+              <th scope="col">Event</th>
+              <th scope="col">Time</th>
               <th scope="col">Account</th>
               <th scope="col">Custodian</th>
             </tr>
@@ -66,4 +77,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default Main;
