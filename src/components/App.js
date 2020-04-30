@@ -111,6 +111,7 @@ class App extends Component {
         <Table
           name={this.state.name}
           custodian={this.state.custodian}
+          contractAddress={this.state.contractAddress}
           actions={this.state.actions}
           receiveAsset={this.receiveAsset}
           sendAsset={this.sendAsset}

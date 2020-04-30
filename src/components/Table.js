@@ -6,7 +6,8 @@ class Table extends Component {
     return (
       <div id="content">
         <h1>{this.props.name}</h1>
-        <h1>{this.props.custodian}</h1>
+        <h1>Custodian: {this.props.custodian}</h1>
+        <h1><a href={`http://localhost:3000?address=${this.props.contractAddress}`} target="_blank">External Link</a></h1>
         <table className="table">
           <thead>
             <tr>
