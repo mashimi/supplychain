@@ -110,8 +110,8 @@ class App extends Component {
   renderContent() {
     if(this.state.loading) {
       return(
-        <div id="loader" className="text-center">
-          <p className="text-center">Loading...</p>
+        <div id='loader' className='text-center'>
+          <p className='text-center'>Loading...</p>
         </div>
       )
     }
@@ -141,9 +141,9 @@ class App extends Component {
     return (
       <div>
         <Navbar account={this.state.account} />
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex">
+        <div className='container-fluid mt-5'>
+          <div className='row'>
+            <main role='main' className="col-lg-12 ml-auto mr-auto">
               {this.renderContent()}
             </main>
           </div>
