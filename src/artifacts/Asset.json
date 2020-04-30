@@ -77,10 +77,10 @@
     {
       "constant": true,
       "inputs": [],
-      "name": "state",
+      "name": "status",
       "outputs": [
         {
-          "internalType": "enum Asset.States",
+          "internalType": "enum Asset.STATUSES",
           "name": "",
           "type": "uint8"
         }
@@ -114,12 +114,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"custodian\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"Action\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"custodian\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"receive\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"send\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"state\",\"outputs\":[{\"internalType\":\"enum Asset.States\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/gregory/code/supply-chain-tutorial/src/contracts/Asset.sol\":\"Asset\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/gregory/code/supply-chain-tutorial/src/contracts/Asset.sol\":{\"keccak256\":\"0xa32a0d4abf2f49670140a1528495568135a098446a863a07334fc92fdab6a238\",\"urls\":[\"bzz-raw://306419bfab091e152660e4d7cc06bc91c74bba72bce34b010a8aa38c98874a0f\",\"dweb:/ipfs/QmNjx3Ub3JANUYd6EynAMnvAeFqkhNhpTJ5txP15eAcCRu\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161095c38038061095c8339818101604052602081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b506040525050508060009080519060200190610104929190610248565b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000600160146101000a81548160ff0219169083600281111561016557fe5b02179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33334260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260068152602001807f435245415445000000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a1506102ed565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061028957805160ff19168380011785556102b7565b828001600101855582156102b7579182015b828111156102b657825182559160200191906001019061029b565b5b5090506102c491906102c8565b5090565b6102ea91905b808211156102e65760008160009055506001016102ce565b5090565b90565b610660806102fc6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c578063375b74c3146100df5780633e58c58c14610129578063a3e76c0f1461016d578063c19d93fb14610177575b600080fd5b6100646101a3565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610241565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61016b6004803603602081101561013f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610267565b005b61017561048e565b005b61017f610618565b6040518082600281111561018f57fe5b60ff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102395780601f1061020e57610100808354040283529160200191610239565b820191906000526020600020905b81548152906001019060200180831161021c57829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102c157600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561031c57600080fd5b6001600281111561032957fe5b600160149054906101000a900460ff16600281111561034457fe5b141561034f57600080fd5b60018060146101000a81548160ff0219169083600281111561036d57fe5b021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33824260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260048152602001807f53454e440000000000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a150565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104e857600080fd5b600160028111156104f557fe5b600160149054906101000a900460ff16600281111561051057fe5b1461051a57600080fd5b6002600160146101000a81548160ff0219169083600281111561053957fe5b02179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33334260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260078152602001807f524543454956450000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a1565b600160149054906101000a900460ff168156fea265627a7a7231582029ee7118a64c7d0c4b5cdf7ec8fe6c841262ecf541d1a70d1a695752c0c25d3f64736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c578063375b74c3146100df5780633e58c58c14610129578063a3e76c0f1461016d578063c19d93fb14610177575b600080fd5b6100646101a3565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610241565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61016b6004803603602081101561013f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610267565b005b61017561048e565b005b61017f610618565b6040518082600281111561018f57fe5b60ff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102395780601f1061020e57610100808354040283529160200191610239565b820191906000526020600020905b81548152906001019060200180831161021c57829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102c157600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561031c57600080fd5b6001600281111561032957fe5b600160149054906101000a900460ff16600281111561034457fe5b141561034f57600080fd5b60018060146101000a81548160ff0219169083600281111561036d57fe5b021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33824260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260048152602001807f53454e440000000000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a150565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104e857600080fd5b600160028111156104f557fe5b600160149054906101000a900460ff16600281111561051057fe5b1461051a57600080fd5b6002600160146101000a81548160ff0219169083600281111561053957fe5b02179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33334260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260078152602001807f524543454956450000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a1565b600160149054906101000a900460ff168156fea265627a7a7231582029ee7118a64c7d0c4b5cdf7ec8fe6c841262ecf541d1a70d1a695752c0c25d3f64736f6c63430005100032",
-  "sourceMap": "25:1344:0:-;;;277:277;8:9:-1;5:2;;;30:1;27;20:12;5:2;277:277:0;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;277:277:0;;;;;;;;;;;;;19:11:-1;14:3;11:20;8:2;;;44:1;41;34:12;8:2;71:11;66:3;62:21;55:28;;123:4;118:3;114:14;159:9;141:16;138:31;135:2;;;182:1;179;172:12;135:2;219:3;213:10;330:9;325:1;311:12;307:20;289:16;285:43;282:58;261:11;247:12;244:29;233:115;230:2;;;361:1;358;351:12;230:2;384:12;379:3;372:25;420:4;415:3;411:14;404:21;;0:432;;277:277:0;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;277:277:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;346:5;339:4;:12;;;;;;;;;;;;:::i;:::-;;401:10;389:9;;:22;;;;;;;;;;;;;;;;;;459:14;451:5;;:22;;;;;;;;;;;;;;;;;;;;;;;;504:45;521:10;533;545:3;504:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;277:277;25:1344;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "25:1344:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:1344:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;44:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;44:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;66:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;558:451;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;558:451:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;1013:354;;;:::i;:::-;;94:19;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;44:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;66:24::-;;;;;;;;;;;;;:::o;558:451::-;653:9;;;;;;;;;;;639:23;;:10;:23;;;631:32;;;;;;712:9;;;;;;;;;;;705:16;;:3;:16;;;;697:25;;;;;;817:11;808:20;;;;;;;;:5;;;;;;;;;;;:20;;;;;;;;;;800:29;;;;;;874:11;866:5;;:19;;;;;;;;;;;;;;;;;;;;;;;;934:3;922:9;;:15;;;;;;;;;;;;;;;;;;968:36;983:10;995:3;1000;968:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;558:451;:::o;1013:354::-;1103:9;;;;;;;;;;;1089:23;;:10;:23;;;1081:32;;;;;;1209:11;1200:20;;;;;;;;:5;;;;;;;;;;;:20;;;;;;;;;1192:29;;;;;;1270:15;1262:5;;:23;;;;;;;;;;;;;;;;;;;;;;;;1316:46;1334:10;1346;1358:3;1316:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1013:354::o;94:19::-;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\n\ncontract Asset {\n  string public name;\n  address public custodian;\n  States public state;\n\n  enum States {\n    Created,\n    Sent,\n    Received\n  }\n\n  event Action(\n    string name,\n    address account,\n    address custodian,\n    uint timestamp\n  );\n\n  constructor(string memory _name) public {\n    // Set name\n    name = _name;\n\n    // Make deployer custodian\n    custodian = msg.sender;\n\n    // Update state to \"Created\"\n    state = States.Created;\n\n    // Log history\n    emit Action(\"CREATE\", msg.sender, msg.sender, now);\n  }\n\n  function send(address _to) public {\n    // Must be custodian to send\n    require(msg.sender == custodian);\n\n    // Cannot send to self\n    require(_to != custodian);\n\n    // Can't be in \"Sent\" state\n    // Must be \"Created\" or \"Received\"\n    require(state != States.Sent);\n\n    // Update state to \"Sent\"\n    state = States.Sent;\n\n    // Make _to new custodian\n    custodian = _to;\n\n    // Log history\n    emit Action(\"SEND\", msg.sender, _to, now);\n  }\n\n  function receive() public {\n    // Must be custodian to receive\n    require(msg.sender == custodian);\n\n    // Must be in \"Sent\" state\n    // Cannot be \"Created\" or \"Received\"\n    require(state == States.Sent);\n\n    // Update state to \"Received\"\n    state = States.Received;\n\n    // Log history\n    emit Action(\"RECEIVE\", msg.sender, msg.sender, now);\n  }\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"custodian\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"Action\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"custodian\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"receive\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"send\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"status\",\"outputs\":[{\"internalType\":\"enum Asset.STATUSES\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/gregory/code/supply-chain-tutorial/src/contracts/Asset.sol\":\"Asset\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/gregory/code/supply-chain-tutorial/src/contracts/Asset.sol\":{\"keccak256\":\"0x5a7fe0aad5ba62c6000932f375c137ddcd5c09f195bd53b2631033d42e0d88d7\",\"urls\":[\"bzz-raw://e34d73de309dd3641b7b90ea005ce1538f44ecd06794fd51a83521b2076f2b9a\",\"dweb:/ipfs/QmXL1ziFYz3G7VtpTJD5iYBodTEhdKXaUHmdNKTgFKuoiJ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161095c38038061095c8339818101604052602081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b506040525050508060009080519060200190610104929190610248565b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000600160146101000a81548160ff0219169083600281111561016557fe5b02179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33334260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260068152602001807f435245415445000000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a1506102ed565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061028957805160ff19168380011785556102b7565b828001600101855582156102b7579182015b828111156102b657825182559160200191906001019061029b565b5b5090506102c491906102c8565b5090565b6102ea91905b808211156102e65760008160009055506001016102ce565b5090565b90565b610660806102fc6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c578063200d2ed2146100df578063375b74c31461010b5780633e58c58c14610155578063a3e76c0f14610199575b600080fd5b6100646101a3565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610241565b604051808260028111156100f757fe5b60ff16815260200191505060405180910390f35b610113610254565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101976004803603602081101561016b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061027a565b005b6101a16104a1565b005b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102395780601f1061020e57610100808354040283529160200191610239565b820191906000526020600020905b81548152906001019060200180831161021c57829003601f168201915b505050505081565b600160149054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102d457600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561032f57600080fd5b6001600281111561033c57fe5b600160149054906101000a900460ff16600281111561035757fe5b141561036257600080fd5b60018060146101000a81548160ff0219169083600281111561038057fe5b021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33824260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260048152602001807f53454e440000000000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a150565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104fb57600080fd5b6001600281111561050857fe5b600160149054906101000a900460ff16600281111561052357fe5b1461052d57600080fd5b6002600160146101000a81548160ff0219169083600281111561054c57fe5b02179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33334260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260078152602001807f524543454956450000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a156fea265627a7a723158201c0e24a9567fdb7a024afdd9cc8fef24f4c36a64d1852749d6195c6704c1615064736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c578063200d2ed2146100df578063375b74c31461010b5780633e58c58c14610155578063a3e76c0f14610199575b600080fd5b6100646101a3565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610241565b604051808260028111156100f757fe5b60ff16815260200191505060405180910390f35b610113610254565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101976004803603602081101561016b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061027a565b005b6101a16104a1565b005b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102395780601f1061020e57610100808354040283529160200191610239565b820191906000526020600020905b81548152906001019060200180831161021c57829003601f168201915b505050505081565b600160149054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102d457600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561032f57600080fd5b6001600281111561033c57fe5b600160149054906101000a900460ff16600281111561035757fe5b141561036257600080fd5b60018060146101000a81548160ff0219169083600281111561038057fe5b021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33824260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260048152602001807f53454e440000000000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a150565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104fb57600080fd5b6001600281111561050857fe5b600160149054906101000a900460ff16600281111561052357fe5b1461052d57600080fd5b6002600160146101000a81548160ff0219169083600281111561054c57fe5b02179055507f85bc0605b6ec0e27701499e22eab1c5cbff14b94d451755ad083dc2663b8ddfe33334260405180806020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828103825260078152602001807f524543454956450000000000000000000000000000000000000000000000000081525060200194505050505060405180910390a156fea265627a7a723158201c0e24a9567fdb7a024afdd9cc8fef24f4c36a64d1852749d6195c6704c1615064736f6c63430005100032",
+  "sourceMap": "25:1369:0:-;;;282:281;8:9:-1;5:2;;;30:1;27;20:12;5:2;282:281:0;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;282:281:0;;;;;;;;;;;;;19:11:-1;14:3;11:20;8:2;;;44:1;41;34:12;8:2;71:11;66:3;62:21;55:28;;123:4;118:3;114:14;159:9;141:16;138:31;135:2;;;182:1;179;172:12;135:2;219:3;213:10;330:9;325:1;311:12;307:20;289:16;285:43;282:58;261:11;247:12;244:29;233:115;230:2;;;361:1;358;351:12;230:2;384:12;379:3;372:25;420:4;415:3;411:14;404:21;;0:432;;282:281:0;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;282:281:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;351:5;344:4;:12;;;;;;;;;;;;:::i;:::-;;406:10;394:9;;:22;;;;;;;;;;;;;;;;;;466:16;457:6;;:25;;;;;;;;;;;;;;;;;;;;;;;;513:45;530:10;542;554:3;513:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;282:281;25:1369;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "25:1369:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:1369:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;44:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;44:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;94:22;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;66:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;567:459;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;567:459:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;1030:362;;;:::i;:::-;;44:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;94:22::-;;;;;;;;;;;;;:::o;66:24::-;;;;;;;;;;;;;:::o;567:459::-;662:9;;;;;;;;;;;648:23;;:10;:23;;;640:32;;;;;;721:9;;;;;;;;;;;714:16;;:3;:16;;;;706:25;;;;;;828:13;818:23;;;;;;;;:6;;;;;;;;;;;:23;;;;;;;;;;810:32;;;;;;889:13;880:6;;:22;;;;;;;;;;;;;;;;;;;;;;;;951:3;939:9;;:15;;;;;;;;;;;;;;;;;;985:36;1000:10;1012:3;1017;985:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;567:459;:::o;1030:362::-;1120:9;;;;;;;;;;;1106:23;;:10;:23;;;1098:32;;;;;;1228:13;1218:23;;;;;;;;:6;;;;;;;;;;;:23;;;;;;;;;1210:32;;;;;;1293:17;1284:6;;:26;;;;;;;;;;;;;;;;;;;;;;;;1341:46;1359:10;1371;1383:3;1341:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1030:362::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract Asset {\n  string public name;\n  address public custodian;\n  STATUSES public status;\n\n  enum STATUSES {\n    CREATED,\n    SENT,\n    RECEIVED\n  }\n\n  event Action(\n    string name,\n    address account,\n    address custodian,\n    uint timestamp\n  );\n\n  constructor(string memory _name) public {\n    // Set name\n    name = _name;\n\n    // Make deployer custodian\n    custodian = msg.sender;\n\n    // Update status to \"CREATED\"\n    status = STATUSES.CREATED;\n\n    // Log history\n    emit Action(\"CREATE\", msg.sender, msg.sender, now);\n  }\n\n  function send(address _to) public {\n    // Must be custodian to send\n    require(msg.sender == custodian);\n\n    // Cannot send to self\n    require(_to != custodian);\n\n    // Can't be in \"SENT\" status\n    // Must be \"CREATED\" or \"RECEIVED\"\n    require(status != STATUSES.SENT);\n\n    // Update status to \"SENT\"\n    status = STATUSES.SENT;\n\n    // Make _to new custodian\n    custodian = _to;\n\n    // Log history\n    emit Action(\"SEND\", msg.sender, _to, now);\n  }\n\n  function receive() public {\n    // Must be custodian to receive\n    require(msg.sender == custodian);\n\n    // Must be in \"SENT\" status\n    // Cannot be \"CREATED\" or \"RECEIVED\"\n    require(status == STATUSES.SENT);\n\n    // Update status to \"RECEIVED\"\n    status = STATUSES.RECEIVED;\n\n    // Log history\n    emit Action(\"RECEIVE\", msg.sender, msg.sender, now);\n  }\n}\n",
   "sourcePath": "/Users/gregory/code/supply-chain-tutorial/src/contracts/Asset.sol",
   "ast": {
     "absolutePath": "/Users/gregory/code/supply-chain-tutorial/src/contracts/Asset.sol",
@@ -211,57 +211,57 @@
           {
             "constant": false,
             "id": 7,
-            "name": "state",
+            "name": "status",
             "nodeType": "VariableDeclaration",
             "scope": 126,
-            "src": "94:19:0",
+            "src": "94:22:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_enum$_States_$11",
-              "typeString": "enum Asset.States"
+              "typeIdentifier": "t_enum$_STATUSES_$11",
+              "typeString": "enum Asset.STATUSES"
             },
             "typeName": {
               "contractScope": null,
               "id": 6,
-              "name": "States",
+              "name": "STATUSES",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 11,
-              "src": "94:6:0",
+              "src": "94:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_enum$_States_$11",
-                "typeString": "enum Asset.States"
+                "typeIdentifier": "t_enum$_STATUSES_$11",
+                "typeString": "enum Asset.STATUSES"
               }
             },
             "value": null,
             "visibility": "public"
           },
           {
-            "canonicalName": "Asset.States",
+            "canonicalName": "Asset.STATUSES",
             "id": 11,
             "members": [
               {
                 "id": 8,
-                "name": "Created",
+                "name": "CREATED",
                 "nodeType": "EnumValue",
-                "src": "136:7:0"
+                "src": "141:7:0"
               },
               {
                 "id": 9,
-                "name": "Sent",
+                "name": "SENT",
                 "nodeType": "EnumValue",
-                "src": "149:4:0"
+                "src": "154:4:0"
               },
               {
                 "id": 10,
-                "name": "Received",
+                "name": "RECEIVED",
                 "nodeType": "EnumValue",
-                "src": "159:8:0"
+                "src": "164:8:0"
               }
             ],
-            "name": "States",
+            "name": "STATUSES",
             "nodeType": "EnumDefinition",
-            "src": "118:53:0"
+            "src": "121:55:0"
           },
           {
             "anonymous": false,
@@ -280,7 +280,7 @@
                   "name": "name",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "193:11:0",
+                  "src": "198:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -291,7 +291,7 @@
                     "id": 12,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "193:6:0",
+                    "src": "198:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -307,7 +307,7 @@
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "210:15:0",
+                  "src": "215:15:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -318,7 +318,7 @@
                     "id": 14,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "210:7:0",
+                    "src": "215:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -335,7 +335,7 @@
                   "name": "custodian",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "231:17:0",
+                  "src": "236:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -346,7 +346,7 @@
                     "id": 16,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "231:7:0",
+                    "src": "236:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -363,7 +363,7 @@
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "254:14:0",
+                  "src": "259:14:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -374,7 +374,7 @@
                     "id": 18,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "254:4:0",
+                    "src": "259:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -384,15 +384,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "187:85:0"
+              "src": "192:85:0"
             },
-            "src": "175:98:0"
+            "src": "180:98:0"
           },
           {
             "body": {
               "id": 49,
               "nodeType": "Block",
-              "src": "317:237:0",
+              "src": "322:241:0",
               "statements": [
                 {
                   "expression": {
@@ -409,7 +409,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "339:4:0",
+                      "src": "344:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -424,13 +424,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 23,
-                      "src": "346:5:0",
+                      "src": "351:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "339:12:0",
+                    "src": "344:12:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
@@ -438,7 +438,7 @@
                   },
                   "id": 29,
                   "nodeType": "ExpressionStatement",
-                  "src": "339:12:0"
+                  "src": "344:12:0"
                 },
                 {
                   "expression": {
@@ -455,7 +455,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 5,
-                      "src": "389:9:0",
+                      "src": "394:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -472,7 +472,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 198,
-                        "src": "401:3:0",
+                        "src": "406:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -486,13 +486,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "401:10:0",
+                      "src": "406:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "389:22:0",
+                    "src": "394:22:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -500,7 +500,7 @@
                   },
                   "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "389:22:0"
+                  "src": "394:22:0"
                 },
                 {
                   "expression": {
@@ -513,14 +513,14 @@
                     "leftHandSide": {
                       "argumentTypes": null,
                       "id": 35,
-                      "name": "state",
+                      "name": "status",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "451:5:0",
+                      "src": "457:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
                     "nodeType": "Assignment",
@@ -530,14 +530,14 @@
                       "expression": {
                         "argumentTypes": null,
                         "id": 36,
-                        "name": "States",
+                        "name": "STATUSES",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "459:6:0",
+                        "src": "466:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                          "typeString": "type(enum Asset.States)"
+                          "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                          "typeString": "type(enum Asset.STATUSES)"
                         }
                       },
                       "id": 37,
@@ -545,24 +545,24 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "Created",
+                      "memberName": "CREATED",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "459:14:0",
+                      "src": "466:16:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
-                    "src": "451:22:0",
+                    "src": "457:25:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_States_$11",
-                      "typeString": "enum Asset.States"
+                      "typeIdentifier": "t_enum$_STATUSES_$11",
+                      "typeString": "enum Asset.STATUSES"
                     }
                   },
                   "id": 39,
                   "nodeType": "ExpressionStatement",
-                  "src": "451:22:0"
+                  "src": "457:25:0"
                 },
                 {
                   "eventCall": {
@@ -578,7 +578,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "511:8:0",
+                        "src": "520:8:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_8c40c1e8946416673984fcabe51d93ca7f795d4572deebda294064e6ec0dcee6",
@@ -595,7 +595,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "521:3:0",
+                          "src": "530:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -609,7 +609,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "521:10:0",
+                        "src": "530:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -624,7 +624,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "533:3:0",
+                          "src": "542:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -638,7 +638,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "533:10:0",
+                        "src": "542:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -651,7 +651,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 200,
-                        "src": "545:3:0",
+                        "src": "554:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -682,7 +682,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 21,
-                      "src": "504:6:0",
+                      "src": "513:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,address,address,uint256)"
@@ -696,7 +696,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "504:45:0",
+                    "src": "513:45:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -704,7 +704,7 @@
                   },
                   "id": 48,
                   "nodeType": "EmitStatement",
-                  "src": "499:50:0"
+                  "src": "508:50:0"
                 }
               ]
             },
@@ -725,7 +725,7 @@
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "scope": 50,
-                  "src": "289:19:0",
+                  "src": "294:19:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -736,7 +736,7 @@
                     "id": 22,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "289:6:0",
+                    "src": "294:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -746,16 +746,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "288:21:0"
+              "src": "293:21:0"
             },
             "returnParameters": {
               "id": 25,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "317:0:0"
+              "src": "322:0:0"
             },
             "scope": 126,
-            "src": "277:277:0",
+            "src": "282:281:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -764,7 +764,7 @@
             "body": {
               "id": 92,
               "nodeType": "Block",
-              "src": "592:417:0",
+              "src": "601:425:0",
               "statements": [
                 {
                   "expression": {
@@ -790,7 +790,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "639:3:0",
+                            "src": "648:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -804,7 +804,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "639:10:0",
+                          "src": "648:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -819,13 +819,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 5,
-                          "src": "653:9:0",
+                          "src": "662:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "639:23:0",
+                        "src": "648:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -847,7 +847,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "631:7:0",
+                      "src": "640:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -861,7 +861,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "631:32:0",
+                    "src": "640:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -869,7 +869,7 @@
                   },
                   "id": 61,
                   "nodeType": "ExpressionStatement",
-                  "src": "631:32:0"
+                  "src": "640:32:0"
                 },
                 {
                   "expression": {
@@ -893,7 +893,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 52,
-                          "src": "705:3:0",
+                          "src": "714:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -908,13 +908,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 5,
-                          "src": "712:9:0",
+                          "src": "721:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "705:16:0",
+                        "src": "714:16:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -936,7 +936,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "697:7:0",
+                      "src": "706:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -950,7 +950,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "697:25:0",
+                    "src": "706:25:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -958,7 +958,7 @@
                   },
                   "id": 67,
                   "nodeType": "ExpressionStatement",
-                  "src": "697:25:0"
+                  "src": "706:25:0"
                 },
                 {
                   "expression": {
@@ -967,8 +967,8 @@
                       {
                         "argumentTypes": null,
                         "commonType": {
-                          "typeIdentifier": "t_enum$_States_$11",
-                          "typeString": "enum Asset.States"
+                          "typeIdentifier": "t_enum$_STATUSES_$11",
+                          "typeString": "enum Asset.STATUSES"
                         },
                         "id": 72,
                         "isConstant": false,
@@ -978,14 +978,14 @@
                         "leftExpression": {
                           "argumentTypes": null,
                           "id": 69,
-                          "name": "state",
+                          "name": "status",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 7,
-                          "src": "808:5:0",
+                          "src": "818:6:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
                         "nodeType": "BinaryOperation",
@@ -995,14 +995,14 @@
                           "expression": {
                             "argumentTypes": null,
                             "id": 70,
-                            "name": "States",
+                            "name": "STATUSES",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 11,
-                            "src": "817:6:0",
+                            "src": "828:8:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                              "typeString": "type(enum Asset.States)"
+                              "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                              "typeString": "type(enum Asset.STATUSES)"
                             }
                           },
                           "id": 71,
@@ -1010,16 +1010,16 @@
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
-                          "memberName": "Sent",
+                          "memberName": "SENT",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "817:11:0",
+                          "src": "828:13:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
-                        "src": "808:20:0",
+                        "src": "818:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1041,7 +1041,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "800:7:0",
+                      "src": "810:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -1055,7 +1055,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "800:29:0",
+                    "src": "810:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1063,7 +1063,7 @@
                   },
                   "id": 74,
                   "nodeType": "ExpressionStatement",
-                  "src": "800:29:0"
+                  "src": "810:32:0"
                 },
                 {
                   "expression": {
@@ -1076,14 +1076,14 @@
                     "leftHandSide": {
                       "argumentTypes": null,
                       "id": 75,
-                      "name": "state",
+                      "name": "status",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "866:5:0",
+                      "src": "880:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
                     "nodeType": "Assignment",
@@ -1093,14 +1093,14 @@
                       "expression": {
                         "argumentTypes": null,
                         "id": 76,
-                        "name": "States",
+                        "name": "STATUSES",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "874:6:0",
+                        "src": "889:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                          "typeString": "type(enum Asset.States)"
+                          "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                          "typeString": "type(enum Asset.STATUSES)"
                         }
                       },
                       "id": 77,
@@ -1108,24 +1108,24 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "Sent",
+                      "memberName": "SENT",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "874:11:0",
+                      "src": "889:13:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
-                    "src": "866:19:0",
+                    "src": "880:22:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_States_$11",
-                      "typeString": "enum Asset.States"
+                      "typeIdentifier": "t_enum$_STATUSES_$11",
+                      "typeString": "enum Asset.STATUSES"
                     }
                   },
                   "id": 79,
                   "nodeType": "ExpressionStatement",
-                  "src": "866:19:0"
+                  "src": "880:22:0"
                 },
                 {
                   "expression": {
@@ -1142,7 +1142,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 5,
-                      "src": "922:9:0",
+                      "src": "939:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1157,13 +1157,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 52,
-                      "src": "934:3:0",
+                      "src": "951:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "922:15:0",
+                    "src": "939:15:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1171,7 +1171,7 @@
                   },
                   "id": 83,
                   "nodeType": "ExpressionStatement",
-                  "src": "922:15:0"
+                  "src": "939:15:0"
                 },
                 {
                   "eventCall": {
@@ -1187,7 +1187,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "975:6:0",
+                        "src": "992:6:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_64dfe6bd7e5a2f4f9775ef2282c3e648f91b42ca0f32547f393da82e9535cc74",
@@ -1204,7 +1204,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "983:3:0",
+                          "src": "1000:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -1218,7 +1218,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "983:10:0",
+                        "src": "1000:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -1231,7 +1231,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 52,
-                        "src": "995:3:0",
+                        "src": "1012:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1244,7 +1244,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 200,
-                        "src": "1000:3:0",
+                        "src": "1017:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1275,7 +1275,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 21,
-                      "src": "968:6:0",
+                      "src": "985:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,address,address,uint256)"
@@ -1289,7 +1289,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "968:36:0",
+                    "src": "985:36:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1297,7 +1297,7 @@
                   },
                   "id": 91,
                   "nodeType": "EmitStatement",
-                  "src": "963:41:0"
+                  "src": "980:41:0"
                 }
               ]
             },
@@ -1318,7 +1318,7 @@
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
                   "scope": 93,
-                  "src": "572:11:0",
+                  "src": "581:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1329,7 +1329,7 @@
                     "id": 51,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "572:7:0",
+                    "src": "581:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1340,16 +1340,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "571:13:0"
+              "src": "580:13:0"
             },
             "returnParameters": {
               "id": 54,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "592:0:0"
+              "src": "601:0:0"
             },
             "scope": 126,
-            "src": "558:451:0",
+            "src": "567:459:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1358,7 +1358,7 @@
             "body": {
               "id": 124,
               "nodeType": "Block",
-              "src": "1039:328:0",
+              "src": "1056:336:0",
               "statements": [
                 {
                   "expression": {
@@ -1384,7 +1384,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "1089:3:0",
+                            "src": "1106:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -1398,7 +1398,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "1089:10:0",
+                          "src": "1106:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -1413,13 +1413,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 5,
-                          "src": "1103:9:0",
+                          "src": "1120:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1089:23:0",
+                        "src": "1106:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1441,7 +1441,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "1081:7:0",
+                      "src": "1098:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -1455,7 +1455,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1081:32:0",
+                    "src": "1098:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1463,7 +1463,7 @@
                   },
                   "id": 102,
                   "nodeType": "ExpressionStatement",
-                  "src": "1081:32:0"
+                  "src": "1098:32:0"
                 },
                 {
                   "expression": {
@@ -1472,8 +1472,8 @@
                       {
                         "argumentTypes": null,
                         "commonType": {
-                          "typeIdentifier": "t_enum$_States_$11",
-                          "typeString": "enum Asset.States"
+                          "typeIdentifier": "t_enum$_STATUSES_$11",
+                          "typeString": "enum Asset.STATUSES"
                         },
                         "id": 107,
                         "isConstant": false,
@@ -1483,14 +1483,14 @@
                         "leftExpression": {
                           "argumentTypes": null,
                           "id": 104,
-                          "name": "state",
+                          "name": "status",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 7,
-                          "src": "1200:5:0",
+                          "src": "1218:6:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
                         "nodeType": "BinaryOperation",
@@ -1500,14 +1500,14 @@
                           "expression": {
                             "argumentTypes": null,
                             "id": 105,
-                            "name": "States",
+                            "name": "STATUSES",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 11,
-                            "src": "1209:6:0",
+                            "src": "1228:8:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                              "typeString": "type(enum Asset.States)"
+                              "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                              "typeString": "type(enum Asset.STATUSES)"
                             }
                           },
                           "id": 106,
@@ -1515,16 +1515,16 @@
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
-                          "memberName": "Sent",
+                          "memberName": "SENT",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "1209:11:0",
+                          "src": "1228:13:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
-                        "src": "1200:20:0",
+                        "src": "1218:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1546,7 +1546,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "1192:7:0",
+                      "src": "1210:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -1560,7 +1560,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1192:29:0",
+                    "src": "1210:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1568,7 +1568,7 @@
                   },
                   "id": 109,
                   "nodeType": "ExpressionStatement",
-                  "src": "1192:29:0"
+                  "src": "1210:32:0"
                 },
                 {
                   "expression": {
@@ -1581,14 +1581,14 @@
                     "leftHandSide": {
                       "argumentTypes": null,
                       "id": 110,
-                      "name": "state",
+                      "name": "status",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "1262:5:0",
+                      "src": "1284:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
                     "nodeType": "Assignment",
@@ -1598,14 +1598,14 @@
                       "expression": {
                         "argumentTypes": null,
                         "id": 111,
-                        "name": "States",
+                        "name": "STATUSES",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "1270:6:0",
+                        "src": "1293:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                          "typeString": "type(enum Asset.States)"
+                          "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                          "typeString": "type(enum Asset.STATUSES)"
                         }
                       },
                       "id": 112,
@@ -1613,24 +1613,24 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "Received",
+                      "memberName": "RECEIVED",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1270:15:0",
+                      "src": "1293:17:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
-                    "src": "1262:23:0",
+                    "src": "1284:26:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_States_$11",
-                      "typeString": "enum Asset.States"
+                      "typeIdentifier": "t_enum$_STATUSES_$11",
+                      "typeString": "enum Asset.STATUSES"
                     }
                   },
                   "id": 114,
                   "nodeType": "ExpressionStatement",
-                  "src": "1262:23:0"
+                  "src": "1284:26:0"
                 },
                 {
                   "eventCall": {
@@ -1646,7 +1646,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1323:9:0",
+                        "src": "1348:9:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_698f9b2d40ab7aed831fc5014d54dfe78cbd16da225bd1e4c8e2cb0993ff3a99",
@@ -1663,7 +1663,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "1334:3:0",
+                          "src": "1359:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -1677,7 +1677,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "1334:10:0",
+                        "src": "1359:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -1692,7 +1692,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "1346:3:0",
+                          "src": "1371:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -1706,7 +1706,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "1346:10:0",
+                        "src": "1371:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -1719,7 +1719,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 200,
-                        "src": "1358:3:0",
+                        "src": "1383:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1750,7 +1750,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 21,
-                      "src": "1316:6:0",
+                      "src": "1341:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,address,address,uint256)"
@@ -1764,7 +1764,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1316:46:0",
+                    "src": "1341:46:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1772,7 +1772,7 @@
                   },
                   "id": 123,
                   "nodeType": "EmitStatement",
-                  "src": "1311:51:0"
+                  "src": "1336:51:0"
                 }
               ]
             },
@@ -1787,26 +1787,26 @@
               "id": 94,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1029:2:0"
+              "src": "1046:2:0"
             },
             "returnParameters": {
               "id": 95,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1039:0:0"
+              "src": "1056:0:0"
             },
             "scope": 126,
-            "src": "1013:354:0",
+            "src": "1030:362:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 127,
-        "src": "25:1344:0"
+        "src": "25:1369:0"
       }
     ],
-    "src": "0:1370:0"
+    "src": "0:1395:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/gregory/code/supply-chain-tutorial/src/contracts/Asset.sol",
@@ -1898,57 +1898,57 @@
           {
             "constant": false,
             "id": 7,
-            "name": "state",
+            "name": "status",
             "nodeType": "VariableDeclaration",
             "scope": 126,
-            "src": "94:19:0",
+            "src": "94:22:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_enum$_States_$11",
-              "typeString": "enum Asset.States"
+              "typeIdentifier": "t_enum$_STATUSES_$11",
+              "typeString": "enum Asset.STATUSES"
             },
             "typeName": {
               "contractScope": null,
               "id": 6,
-              "name": "States",
+              "name": "STATUSES",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 11,
-              "src": "94:6:0",
+              "src": "94:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_enum$_States_$11",
-                "typeString": "enum Asset.States"
+                "typeIdentifier": "t_enum$_STATUSES_$11",
+                "typeString": "enum Asset.STATUSES"
               }
             },
             "value": null,
             "visibility": "public"
           },
           {
-            "canonicalName": "Asset.States",
+            "canonicalName": "Asset.STATUSES",
             "id": 11,
             "members": [
               {
                 "id": 8,
-                "name": "Created",
+                "name": "CREATED",
                 "nodeType": "EnumValue",
-                "src": "136:7:0"
+                "src": "141:7:0"
               },
               {
                 "id": 9,
-                "name": "Sent",
+                "name": "SENT",
                 "nodeType": "EnumValue",
-                "src": "149:4:0"
+                "src": "154:4:0"
               },
               {
                 "id": 10,
-                "name": "Received",
+                "name": "RECEIVED",
                 "nodeType": "EnumValue",
-                "src": "159:8:0"
+                "src": "164:8:0"
               }
             ],
-            "name": "States",
+            "name": "STATUSES",
             "nodeType": "EnumDefinition",
-            "src": "118:53:0"
+            "src": "121:55:0"
           },
           {
             "anonymous": false,
@@ -1967,7 +1967,7 @@
                   "name": "name",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "193:11:0",
+                  "src": "198:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1978,7 +1978,7 @@
                     "id": 12,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "193:6:0",
+                    "src": "198:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1994,7 +1994,7 @@
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "210:15:0",
+                  "src": "215:15:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2005,7 +2005,7 @@
                     "id": 14,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "210:7:0",
+                    "src": "215:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2022,7 +2022,7 @@
                   "name": "custodian",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "231:17:0",
+                  "src": "236:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2033,7 +2033,7 @@
                     "id": 16,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "231:7:0",
+                    "src": "236:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2050,7 +2050,7 @@
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
                   "scope": 21,
-                  "src": "254:14:0",
+                  "src": "259:14:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2061,7 +2061,7 @@
                     "id": 18,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "254:4:0",
+                    "src": "259:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2071,15 +2071,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "187:85:0"
+              "src": "192:85:0"
             },
-            "src": "175:98:0"
+            "src": "180:98:0"
           },
           {
             "body": {
               "id": 49,
               "nodeType": "Block",
-              "src": "317:237:0",
+              "src": "322:241:0",
               "statements": [
                 {
                   "expression": {
@@ -2096,7 +2096,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "339:4:0",
+                      "src": "344:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -2111,13 +2111,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 23,
-                      "src": "346:5:0",
+                      "src": "351:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "339:12:0",
+                    "src": "344:12:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
@@ -2125,7 +2125,7 @@
                   },
                   "id": 29,
                   "nodeType": "ExpressionStatement",
-                  "src": "339:12:0"
+                  "src": "344:12:0"
                 },
                 {
                   "expression": {
@@ -2142,7 +2142,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 5,
-                      "src": "389:9:0",
+                      "src": "394:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2159,7 +2159,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 198,
-                        "src": "401:3:0",
+                        "src": "406:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -2173,13 +2173,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "401:10:0",
+                      "src": "406:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "389:22:0",
+                    "src": "394:22:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2187,7 +2187,7 @@
                   },
                   "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "389:22:0"
+                  "src": "394:22:0"
                 },
                 {
                   "expression": {
@@ -2200,14 +2200,14 @@
                     "leftHandSide": {
                       "argumentTypes": null,
                       "id": 35,
-                      "name": "state",
+                      "name": "status",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "451:5:0",
+                      "src": "457:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
                     "nodeType": "Assignment",
@@ -2217,14 +2217,14 @@
                       "expression": {
                         "argumentTypes": null,
                         "id": 36,
-                        "name": "States",
+                        "name": "STATUSES",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "459:6:0",
+                        "src": "466:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                          "typeString": "type(enum Asset.States)"
+                          "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                          "typeString": "type(enum Asset.STATUSES)"
                         }
                       },
                       "id": 37,
@@ -2232,24 +2232,24 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "Created",
+                      "memberName": "CREATED",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "459:14:0",
+                      "src": "466:16:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
-                    "src": "451:22:0",
+                    "src": "457:25:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_States_$11",
-                      "typeString": "enum Asset.States"
+                      "typeIdentifier": "t_enum$_STATUSES_$11",
+                      "typeString": "enum Asset.STATUSES"
                     }
                   },
                   "id": 39,
                   "nodeType": "ExpressionStatement",
-                  "src": "451:22:0"
+                  "src": "457:25:0"
                 },
                 {
                   "eventCall": {
@@ -2265,7 +2265,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "511:8:0",
+                        "src": "520:8:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_8c40c1e8946416673984fcabe51d93ca7f795d4572deebda294064e6ec0dcee6",
@@ -2282,7 +2282,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "521:3:0",
+                          "src": "530:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -2296,7 +2296,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "521:10:0",
+                        "src": "530:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -2311,7 +2311,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "533:3:0",
+                          "src": "542:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -2325,7 +2325,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "533:10:0",
+                        "src": "542:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -2338,7 +2338,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 200,
-                        "src": "545:3:0",
+                        "src": "554:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2369,7 +2369,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 21,
-                      "src": "504:6:0",
+                      "src": "513:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,address,address,uint256)"
@@ -2383,7 +2383,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "504:45:0",
+                    "src": "513:45:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -2391,7 +2391,7 @@
                   },
                   "id": 48,
                   "nodeType": "EmitStatement",
-                  "src": "499:50:0"
+                  "src": "508:50:0"
                 }
               ]
             },
@@ -2412,7 +2412,7 @@
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "scope": 50,
-                  "src": "289:19:0",
+                  "src": "294:19:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2423,7 +2423,7 @@
                     "id": 22,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "289:6:0",
+                    "src": "294:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2433,16 +2433,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "288:21:0"
+              "src": "293:21:0"
             },
             "returnParameters": {
               "id": 25,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "317:0:0"
+              "src": "322:0:0"
             },
             "scope": 126,
-            "src": "277:277:0",
+            "src": "282:281:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -2451,7 +2451,7 @@
             "body": {
               "id": 92,
               "nodeType": "Block",
-              "src": "592:417:0",
+              "src": "601:425:0",
               "statements": [
                 {
                   "expression": {
@@ -2477,7 +2477,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "639:3:0",
+                            "src": "648:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -2491,7 +2491,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "639:10:0",
+                          "src": "648:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -2506,13 +2506,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 5,
-                          "src": "653:9:0",
+                          "src": "662:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "639:23:0",
+                        "src": "648:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2534,7 +2534,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "631:7:0",
+                      "src": "640:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -2548,7 +2548,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "631:32:0",
+                    "src": "640:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -2556,7 +2556,7 @@
                   },
                   "id": 61,
                   "nodeType": "ExpressionStatement",
-                  "src": "631:32:0"
+                  "src": "640:32:0"
                 },
                 {
                   "expression": {
@@ -2580,7 +2580,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 52,
-                          "src": "705:3:0",
+                          "src": "714:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2595,13 +2595,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 5,
-                          "src": "712:9:0",
+                          "src": "721:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "705:16:0",
+                        "src": "714:16:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2623,7 +2623,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "697:7:0",
+                      "src": "706:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -2637,7 +2637,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "697:25:0",
+                    "src": "706:25:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -2645,7 +2645,7 @@
                   },
                   "id": 67,
                   "nodeType": "ExpressionStatement",
-                  "src": "697:25:0"
+                  "src": "706:25:0"
                 },
                 {
                   "expression": {
@@ -2654,8 +2654,8 @@
                       {
                         "argumentTypes": null,
                         "commonType": {
-                          "typeIdentifier": "t_enum$_States_$11",
-                          "typeString": "enum Asset.States"
+                          "typeIdentifier": "t_enum$_STATUSES_$11",
+                          "typeString": "enum Asset.STATUSES"
                         },
                         "id": 72,
                         "isConstant": false,
@@ -2665,14 +2665,14 @@
                         "leftExpression": {
                           "argumentTypes": null,
                           "id": 69,
-                          "name": "state",
+                          "name": "status",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 7,
-                          "src": "808:5:0",
+                          "src": "818:6:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
                         "nodeType": "BinaryOperation",
@@ -2682,14 +2682,14 @@
                           "expression": {
                             "argumentTypes": null,
                             "id": 70,
-                            "name": "States",
+                            "name": "STATUSES",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 11,
-                            "src": "817:6:0",
+                            "src": "828:8:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                              "typeString": "type(enum Asset.States)"
+                              "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                              "typeString": "type(enum Asset.STATUSES)"
                             }
                           },
                           "id": 71,
@@ -2697,16 +2697,16 @@
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
-                          "memberName": "Sent",
+                          "memberName": "SENT",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "817:11:0",
+                          "src": "828:13:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
-                        "src": "808:20:0",
+                        "src": "818:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2728,7 +2728,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "800:7:0",
+                      "src": "810:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -2742,7 +2742,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "800:29:0",
+                    "src": "810:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -2750,7 +2750,7 @@
                   },
                   "id": 74,
                   "nodeType": "ExpressionStatement",
-                  "src": "800:29:0"
+                  "src": "810:32:0"
                 },
                 {
                   "expression": {
@@ -2763,14 +2763,14 @@
                     "leftHandSide": {
                       "argumentTypes": null,
                       "id": 75,
-                      "name": "state",
+                      "name": "status",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "866:5:0",
+                      "src": "880:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
                     "nodeType": "Assignment",
@@ -2780,14 +2780,14 @@
                       "expression": {
                         "argumentTypes": null,
                         "id": 76,
-                        "name": "States",
+                        "name": "STATUSES",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "874:6:0",
+                        "src": "889:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                          "typeString": "type(enum Asset.States)"
+                          "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                          "typeString": "type(enum Asset.STATUSES)"
                         }
                       },
                       "id": 77,
@@ -2795,24 +2795,24 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "Sent",
+                      "memberName": "SENT",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "874:11:0",
+                      "src": "889:13:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
-                    "src": "866:19:0",
+                    "src": "880:22:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_States_$11",
-                      "typeString": "enum Asset.States"
+                      "typeIdentifier": "t_enum$_STATUSES_$11",
+                      "typeString": "enum Asset.STATUSES"
                     }
                   },
                   "id": 79,
                   "nodeType": "ExpressionStatement",
-                  "src": "866:19:0"
+                  "src": "880:22:0"
                 },
                 {
                   "expression": {
@@ -2829,7 +2829,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 5,
-                      "src": "922:9:0",
+                      "src": "939:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2844,13 +2844,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 52,
-                      "src": "934:3:0",
+                      "src": "951:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "922:15:0",
+                    "src": "939:15:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2858,7 +2858,7 @@
                   },
                   "id": 83,
                   "nodeType": "ExpressionStatement",
-                  "src": "922:15:0"
+                  "src": "939:15:0"
                 },
                 {
                   "eventCall": {
@@ -2874,7 +2874,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "975:6:0",
+                        "src": "992:6:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_64dfe6bd7e5a2f4f9775ef2282c3e648f91b42ca0f32547f393da82e9535cc74",
@@ -2891,7 +2891,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "983:3:0",
+                          "src": "1000:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -2905,7 +2905,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "983:10:0",
+                        "src": "1000:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -2918,7 +2918,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 52,
-                        "src": "995:3:0",
+                        "src": "1012:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2931,7 +2931,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 200,
-                        "src": "1000:3:0",
+                        "src": "1017:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2962,7 +2962,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 21,
-                      "src": "968:6:0",
+                      "src": "985:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,address,address,uint256)"
@@ -2976,7 +2976,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "968:36:0",
+                    "src": "985:36:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -2984,7 +2984,7 @@
                   },
                   "id": 91,
                   "nodeType": "EmitStatement",
-                  "src": "963:41:0"
+                  "src": "980:41:0"
                 }
               ]
             },
@@ -3005,7 +3005,7 @@
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
                   "scope": 93,
-                  "src": "572:11:0",
+                  "src": "581:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3016,7 +3016,7 @@
                     "id": 51,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "572:7:0",
+                    "src": "581:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3027,16 +3027,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "571:13:0"
+              "src": "580:13:0"
             },
             "returnParameters": {
               "id": 54,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "592:0:0"
+              "src": "601:0:0"
             },
             "scope": 126,
-            "src": "558:451:0",
+            "src": "567:459:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -3045,7 +3045,7 @@
             "body": {
               "id": 124,
               "nodeType": "Block",
-              "src": "1039:328:0",
+              "src": "1056:336:0",
               "statements": [
                 {
                   "expression": {
@@ -3071,7 +3071,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "1089:3:0",
+                            "src": "1106:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -3085,7 +3085,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "1089:10:0",
+                          "src": "1106:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -3100,13 +3100,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 5,
-                          "src": "1103:9:0",
+                          "src": "1120:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1089:23:0",
+                        "src": "1106:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3128,7 +3128,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "1081:7:0",
+                      "src": "1098:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -3142,7 +3142,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1081:32:0",
+                    "src": "1098:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -3150,7 +3150,7 @@
                   },
                   "id": 102,
                   "nodeType": "ExpressionStatement",
-                  "src": "1081:32:0"
+                  "src": "1098:32:0"
                 },
                 {
                   "expression": {
@@ -3159,8 +3159,8 @@
                       {
                         "argumentTypes": null,
                         "commonType": {
-                          "typeIdentifier": "t_enum$_States_$11",
-                          "typeString": "enum Asset.States"
+                          "typeIdentifier": "t_enum$_STATUSES_$11",
+                          "typeString": "enum Asset.STATUSES"
                         },
                         "id": 107,
                         "isConstant": false,
@@ -3170,14 +3170,14 @@
                         "leftExpression": {
                           "argumentTypes": null,
                           "id": 104,
-                          "name": "state",
+                          "name": "status",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 7,
-                          "src": "1200:5:0",
+                          "src": "1218:6:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
                         "nodeType": "BinaryOperation",
@@ -3187,14 +3187,14 @@
                           "expression": {
                             "argumentTypes": null,
                             "id": 105,
-                            "name": "States",
+                            "name": "STATUSES",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 11,
-                            "src": "1209:6:0",
+                            "src": "1228:8:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                              "typeString": "type(enum Asset.States)"
+                              "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                              "typeString": "type(enum Asset.STATUSES)"
                             }
                           },
                           "id": 106,
@@ -3202,16 +3202,16 @@
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
-                          "memberName": "Sent",
+                          "memberName": "SENT",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "1209:11:0",
+                          "src": "1228:13:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_States_$11",
-                            "typeString": "enum Asset.States"
+                            "typeIdentifier": "t_enum$_STATUSES_$11",
+                            "typeString": "enum Asset.STATUSES"
                           }
                         },
-                        "src": "1200:20:0",
+                        "src": "1218:23:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3233,7 +3233,7 @@
                         202
                       ],
                       "referencedDeclaration": 201,
-                      "src": "1192:7:0",
+                      "src": "1210:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -3247,7 +3247,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1192:29:0",
+                    "src": "1210:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -3255,7 +3255,7 @@
                   },
                   "id": 109,
                   "nodeType": "ExpressionStatement",
-                  "src": "1192:29:0"
+                  "src": "1210:32:0"
                 },
                 {
                   "expression": {
@@ -3268,14 +3268,14 @@
                     "leftHandSide": {
                       "argumentTypes": null,
                       "id": 110,
-                      "name": "state",
+                      "name": "status",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 7,
-                      "src": "1262:5:0",
+                      "src": "1284:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
                     "nodeType": "Assignment",
@@ -3285,14 +3285,14 @@
                       "expression": {
                         "argumentTypes": null,
                         "id": 111,
-                        "name": "States",
+                        "name": "STATUSES",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "1270:6:0",
+                        "src": "1293:8:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_States_$11_$",
-                          "typeString": "type(enum Asset.States)"
+                          "typeIdentifier": "t_type$_t_enum$_STATUSES_$11_$",
+                          "typeString": "type(enum Asset.STATUSES)"
                         }
                       },
                       "id": 112,
@@ -3300,24 +3300,24 @@
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberName": "Received",
+                      "memberName": "RECEIVED",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1270:15:0",
+                      "src": "1293:17:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_States_$11",
-                        "typeString": "enum Asset.States"
+                        "typeIdentifier": "t_enum$_STATUSES_$11",
+                        "typeString": "enum Asset.STATUSES"
                       }
                     },
-                    "src": "1262:23:0",
+                    "src": "1284:26:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_States_$11",
-                      "typeString": "enum Asset.States"
+                      "typeIdentifier": "t_enum$_STATUSES_$11",
+                      "typeString": "enum Asset.STATUSES"
                     }
                   },
                   "id": 114,
                   "nodeType": "ExpressionStatement",
-                  "src": "1262:23:0"
+                  "src": "1284:26:0"
                 },
                 {
                   "eventCall": {
@@ -3333,7 +3333,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1323:9:0",
+                        "src": "1348:9:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_698f9b2d40ab7aed831fc5014d54dfe78cbd16da225bd1e4c8e2cb0993ff3a99",
@@ -3350,7 +3350,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "1334:3:0",
+                          "src": "1359:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -3364,7 +3364,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "1334:10:0",
+                        "src": "1359:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -3379,7 +3379,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 198,
-                          "src": "1346:3:0",
+                          "src": "1371:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -3393,7 +3393,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "1346:10:0",
+                        "src": "1371:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -3406,7 +3406,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 200,
-                        "src": "1358:3:0",
+                        "src": "1383:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3437,7 +3437,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 21,
-                      "src": "1316:6:0",
+                      "src": "1341:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,address,address,uint256)"
@@ -3451,7 +3451,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1316:46:0",
+                    "src": "1341:46:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -3459,7 +3459,7 @@
                   },
                   "id": 123,
                   "nodeType": "EmitStatement",
-                  "src": "1311:51:0"
+                  "src": "1336:51:0"
                 }
               ]
             },
@@ -3474,26 +3474,26 @@
               "id": 94,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1029:2:0"
+              "src": "1046:2:0"
             },
             "returnParameters": {
               "id": 95,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1039:0:0"
+              "src": "1056:0:0"
             },
             "scope": 126,
-            "src": "1013:354:0",
+            "src": "1030:362:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 127,
-        "src": "25:1344:0"
+        "src": "25:1369:0"
       }
     ],
-    "src": "0:1370:0"
+    "src": "0:1395:0"
   },
   "compiler": {
     "name": "solc",
@@ -3540,8 +3540,7 @@
     }
   },
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-04-29T19:12:42.020Z",
-  "networkType": "ethereum",
+  "updatedAt": "2020-04-30T16:33:51.826Z",
   "devdoc": {
     "methods": {}
   },

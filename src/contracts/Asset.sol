@@ -3,12 +3,12 @@ pragma solidity ^0.5.0;
 contract Asset {
   string public name;
   address public custodian;
-  States public state;
+  STATUSES public status;
 
-  enum States {
-    Created,
-    Sent,
-    Received
+  enum STATUSES {
+    CREATED,
+    SENT,
+    RECEIVED
   }
 
   event Action(
@@ -25,8 +25,8 @@ contract Asset {
     // Make deployer custodian
     custodian = msg.sender;
 
-    // Update state to "Created"
-    state = States.Created;
+    // Update status to "CREATED"
+    status = STATUSES.CREATED;
 
     // Log history
     emit Action("CREATE", msg.sender, msg.sender, now);
@@ -39,12 +39,12 @@ contract Asset {
     // Cannot send to self
     require(_to != custodian);
 
-    // Can't be in "Sent" state
-    // Must be "Created" or "Received"
-    require(state != States.Sent);
+    // Can't be in "SENT" status
+    // Must be "CREATED" or "RECEIVED"
+    require(status != STATUSES.SENT);
 
-    // Update state to "Sent"
-    state = States.Sent;
+    // Update status to "SENT"
+    status = STATUSES.SENT;
 
     // Make _to new custodian
     custodian = _to;
@@ -57,12 +57,12 @@ contract Asset {
     // Must be custodian to receive
     require(msg.sender == custodian);
 
-    // Must be in "Sent" state
-    // Cannot be "Created" or "Received"
-    require(state == States.Sent);
+    // Must be in "SENT" status
+    // Cannot be "CREATED" or "RECEIVED"
+    require(status == STATUSES.SENT);
 
-    // Update state to "Received"
-    state = States.Received;
+    // Update status to "RECEIVED"
+    status = STATUSES.RECEIVED;
 
     // Log history
     emit Action("RECEIVE", msg.sender, msg.sender, now);

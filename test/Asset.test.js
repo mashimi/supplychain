@@ -7,10 +7,10 @@ require('chai')
 contract('Asset', (accounts) => {
   let asset, creator, sender, receiver
 
-  const States = {
-    Created: 0,
-    Sent: 1,
-    Received: 2
+  const STATUSES = {
+    CREATED: 0,
+    SENT: 1,
+    RECEIVED: 2
   }
 
   before(async () => {
@@ -36,9 +36,9 @@ contract('Asset', (accounts) => {
       assert.equal(custodian, creator)
     })
 
-    it('sets the state', async () => {
-      const state = await asset.state()
-      assert.equal(state, States.Created)
+    it('sets the status', async () => {
+      const status = await asset.status()
+      assert.equal(status, STATUSES.CREATED)
     })
 
     it('logs an action', async () => {
@@ -55,7 +55,7 @@ contract('Asset', (accounts) => {
 
     describe('FAILURE', async() => {
 
-      it('must be sent by custodian', async () => {
+      it('must be SENT by custodian', async () => {
         sender = accounts[1] // Receiver cannot send
         receiver = accounts[1]
         await asset.send(receiver, { from: sender }).should.be.rejected;
@@ -82,9 +82,9 @@ contract('Asset', (accounts) => {
         assert.equal(custodian, receiver)
       })
 
-      it('sets the state', async () => {
-        const state = await asset.state()
-        assert.equal(state, States.Sent)
+      it('sets the status', async () => {
+        const status = await asset.status()
+        assert.equal(status, STATUSES.SENT)
       })
 
       it('logs an action', async () => {
@@ -102,7 +102,7 @@ contract('Asset', (accounts) => {
 
     describe('FAILURE', async() => {
 
-      it('must be received by custodian', async () => {
+      it('must be RECEIVED by custodian', async () => {
         receiver = accounts[9] // Some other account
         await asset.receive({ from: receiver }).should.be.rejected;
       })
@@ -121,9 +121,9 @@ contract('Asset', (accounts) => {
         assert.equal(custodian, receiver)
       })
 
-      it('sets the state', async () => {
-        const state = await asset.state()
-        assert.equal(state, States.Received)
+      it('sets the status', async () => {
+        const status = await asset.status()
+        assert.equal(status, STATUSES.RECEIVED)
       })
 
       it('logs an action', async () => {

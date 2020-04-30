@@ -57,18 +57,18 @@ class App extends Component {
 
   // http://localhost:3000/?address=0x33E3E71eEF5EF08fdd9C17fc9A246F437AB84A18
   loadAsset = async () => {
-    console.log("loading asset", Asset.abi, this.state.contractAddress)
     const contract = new window.web3.eth.Contract(Asset.abi, this.state.contractAddress)
     const name = await contract.methods.name().call()
+    const status = await contract.methods.status().call()
     const custodian = await contract.methods.custodian().call()
     const actions = await contract.getPastEvents('Action', { fromBlock: 0, toBlock: 'latest' } )
-    console.log("finished loading asset")
 
     this.setState({
-      contract: contract,
-      name: name,
-      custodian: custodian,
-      actions: actions
+      contract,
+      name,
+      status,
+      custodian,
+      actions
     })
   }
 
@@ -82,19 +82,30 @@ class App extends Component {
     .send({
       from: this.state.account
     }).once('receipt', async (receipt) => {
-      console.log(receipt.contractAddress)
       this.setState({ contractAddress: receipt.contractAddress })
       await this.loadAsset()
       this.setState({ loading: false })
     })
   }
 
-  sendAsset = async () => {
-
+  sendAsset = async (to) => {
+    this.setState({ loading: true })
+    this.state.contract.methods.send(to).send({
+      from: this.state.account
+    }).once('receipt', async (receipt) => {
+      await this.loadAsset()
+      this.setState({ loading: false })
+    })
   }
 
   receiveAsset = async () => {
-
+    this.setState({ loading: true })
+    this.state.contract.methods.receive().send({
+      from: this.state.account
+    }).once('receipt', async (receipt) => {
+      await this.loadAsset()
+      this.setState({ loading: false })
+    })
   }
 
   renderContent() {
@@ -111,6 +122,7 @@ class App extends Component {
         <Table
           name={this.state.name}
           custodian={this.state.custodian}
+          status={this.state.status}
           contractAddress={this.state.contractAddress}
           actions={this.state.actions}
           receiveAsset={this.receiveAsset}
