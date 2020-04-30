@@ -1,45 +1,149 @@
 import React, { Component } from 'react';
-import logo from '../logo.png';
+import Web3 from 'web3'
 import './App.css';
+import Asset from '../artifacts/Asset.json'
+import Navbar from './Navbar'
+import Form from './Form'
+import Table from './Table'
 
 class App extends Component {
+
+  async componentWillMount() {
+    await this.loadWeb3()
+    await this.loadBlockchainData()
+  }
+
+  async loadWeb3() {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
+    }
+    else if (window.web3) {
+      window.web3 = new Web3(window.web3.currentProvider)
+    }
+    else {
+      window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+    }
+  }
+
+  async loadBlockchainData() {
+    window.web3.eth.transactionConfirmationBlocks = 0
+    // If state has address, then load page
+    // Else, load new contract form
+    // Load account
+    const accounts = await window.web3.eth.getAccounts()
+    this.setState({ account: accounts[0] })
+    if(this.state.contractAddress) {
+      await this.loadAsset()
+    }
+    this.setState({ loading: false })
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      account: '',
+      contractAddress: null,
+      contract: {},
+      name: '',
+      custodian: '',
+      actions: [],
+      loading: true
+    }
+  }
+
+  loadAsset = async () => {
+    const contract = new window.web3.eth.Contract(Asset.abi, this.state.contractAddress)
+    const name = await contract.methods.name().call()
+    const custodian = await contract.methods.custodian().call()
+    const actions = await contract.getPastEvents('Action', { fromBlock: 0, toBlock: 'latest' } )
+
+    this.setState({
+      contract: contract,
+      name: name,
+      custodian: custodian,
+      actions: actions,
+      loading: false
+    })
+  }
+
+  createAsset = async (name) => {
+    this.setState({ loading: true })
+
+    const contract = new window.web3.eth.Contract(Asset.abi)
+
+    contract.deploy({
+      data: Asset.bytecode,
+      arguments: [name]
+    })
+    .send({
+      from: this.state.account
+    }).once('receipt', async (receipt) => {
+      console.log(receipt.contractAddress)
+      this.setState({ contractAddress: receipt.contractAddress })
+      await this.loadAsset()
+    })
+  }
+
+  sendAsset = () => {
+
+  }
+
+  receiveAsset = () => {
+
+  }
+
+  renderContent = () => {
+//     let loading = true
+// 
+// 
+//     if(this.state.contractAddress) {
+//       console.log("this.state.contractAddress", this.state.contractAddress)
+//       loading = this.state.name.length < 0 ||
+//                 this.state.custodian.length < 0
+//     } else {
+//       loading = this.state.account.length < 0
+//     }
+// 
+//     console.log("this.state.name", this.state.name, "this.state.custodian", this.state.custodian)
+
+    if(this.state.loading) {
+      return(
+        <div id="loader" className="text-center">
+          <p className="text-center">Loading...</p>
+        </div>
+      )
+    }
+
+    console.log("name", this.state.name)
+
+    if(this.state.contractAddress) {
+      return(
+        <Table
+          name={this.state.name}
+          custodian={this.state.custodian}
+          actions={this.state.actions}
+          receiveAsset={this.receiveAsset}
+          sendAsset={this.sendAsset}
+        />
+      )
+    } else {
+      return(
+        <Form
+          createAsset={this.createAsset}
+        />
+      ) 
+    }
+  }
+
   render() {
     return (
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dapp University
-          </a>
-        </nav>
+        <Navbar account={this.state.account} />
         <div className="container-fluid mt-5">
           <div className="row">
-            <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={logo} className="App-logo" alt="logo" />
-                </a>
-                <h1>Dapp University Starter Kit</h1>
-                <p>
-                  Edit <code>src/components/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LEARN BLOCKCHAIN <u><b>NOW! </b></u>
-                </a>
-              </div>
+            <main role="main" className="col-lg-12 d-flex">
+              {this.renderContent()}
             </main>
           </div>
         </div>
