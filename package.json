@@ -1,8 +1,8 @@
 {
-  "name": "dapp-university-supply-chain",
+  "name": "Mashimisupplychain",
   "version": "0.1.0",
-  "description": "Blockcain Supply Chain Tutorial App",
-  "author": "gregory@dappuniversity.com",
+  "description": "Blockcain Supply Chain ",
+  "author": "lmashimi@gmail.com",
   "dependencies": {
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
@@ -12,6 +12,7 @@
     "babel-register": "6.26.0",
     "bootstrap": "4.3.1",
     "chai": "4.2.0",
+    "dotenv": "^8.2.0",
     "chai-as-promised": "7.1.1",
     "chai-bignumber": "3.0.0",
     "identicon.js": "^2.3.3",
